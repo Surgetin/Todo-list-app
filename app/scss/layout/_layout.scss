@@ -1,0 +1,131 @@
+@use '../globals/colors' as *;
+@use '../globals/variables' as *;
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1440px;
+    height: 760px;
+    background-color: $container-bg-color;
+    border-radius: $container-border-radius;
+}
+
+.side_menu-container {
+    flex-basis: 25%;
+    padding: 4rem 0 4rem 4rem;
+    border-right: 3px solid rgb(233, 233, 233);
+    overflow: hidden;
+
+    .logo-container {
+        margin-bottom: 4rem;
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+    .nav_list-items {
+        margin-bottom: 12rem;
+    }
+
+    .nav_list-items,
+    .bottom_list-items {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav_list-item,
+    .bottom_list-item {
+        position: relative;
+        padding: .7rem 0;
+        cursor: pointer;
+    }
+
+    .nav_list-item:after,
+    .bottom_list-item:after {
+        content: '';
+        display: block;
+        z-index: -1;
+        position: absolute;
+        right: 200%; 
+        top: 0;
+        width: 150%; 
+        height: 100%;
+        border-right: solid 5px #2C9985;
+        background: rgb(243, 243, 243);
+        transition: .6s ease right;
+        -moz-box-shadow:    inset 0 0 2px #00000030;
+        -webkit-box-shadow: inset 0 0 2px #00000030;
+        box-shadow:         inset 0 0 2px #00000030;
+    }
+
+    .nav_list-item:hover a,
+    .bottom_list-item:hover a {
+        color: #000000;
+        opacity: 1;
+    }
+
+    .nav_list-item:hover img,
+    .bottom_list-item:hover img {
+        opacity: 1;
+    }
+
+    .nav_list-item:hover:after,
+    .bottom_list-item:hover:after {
+        right: 0px;
+    }
+
+    .nav_list-item,
+    .bottom_list-item {
+        display: flex;
+        gap: 1.5rem;
+    }
+    
+    .nav_list-item img,
+    .bottom_list-item img {
+        opacity: .5;
+        transition: 1s ease-in-out;
+    }
+
+    .side_menu-nav a{
+        color: #727272;
+        transition: .3s ease-in-out;
+    }
+
+    .nav_list-item.chat {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .recieved_msg {
+        position: absolute;
+        right: 35px;
+        background-color: rgb(252, 153, 41);
+        padding: .1rem .5rem;
+        border-radius: 10px;
+        color: $container-bg-color;
+    }
+}
+
+
+
+.main-container {
+    flex-basis: 75%;
+    background-color: $container-bg-color;
+    border-top-right-radius: $container-border-radius;
+    border-bottom-right-radius: $container-border-radius;
+    padding: 4rem 4rem 4rem 3rem;
+
+    .content-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between
+    }
+}
