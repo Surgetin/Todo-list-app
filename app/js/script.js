@@ -1,6 +1,5 @@
 const todos = document.querySelectorAll('.todo-wrapper');
-const all_status = document.querySelectorAll(".todo_box-content");
-const todo_height = document.querySelector('.todo-wrapper').clientHeight;
+const all_boxes = document.querySelectorAll(".todo_box-content");
 let draggableTodo = null;
 
 todos.forEach((todo) => {
@@ -9,17 +8,17 @@ todos.forEach((todo) => {
 });
 
 function setBoxHeight() {
-    all_status.style.height = todo_height;
+    all_boxes.forEach((e) => {
+        e.style.height = '460px';
+    })
 }
 
 function dragStart() {
     draggableTodo = this;
+    setBoxHeight()
     setTimeout(() => {
       this.style.display = "none";
     }, 0);
-    console.log("dragStart");
-    console.log(todo_height)
-    setBoxHeight()
 }
   
 function dragEnd() {
@@ -27,10 +26,9 @@ function dragEnd() {
     setTimeout(() => {
         this.style.display = "block";
     }, 0);
-    console.log("dragEnd");
 }
 
-all_status.forEach((status) => {
+all_boxes.forEach((status) => {
     status.addEventListener("dragover", dragOver);
     status.addEventListener("dragenter", dragEnter);
     status.addEventListener("dragleave", dragLeave);
@@ -39,21 +37,18 @@ all_status.forEach((status) => {
   
 function dragOver(e) {
     e.preventDefault();
-    //   console.log("dragOver");
 }
 
 function dragEnter() {
-    this.style.border = "2px dashed #ccc";
-    console.log("dragEnter");
+    this.style.border = "3px dashed #ccc";
+    this.style.borderRadius = "10px";
 }
 
 function dragLeave() {
     this.style.border = "none";
-    console.log("dragLeave");
 }
 
 function dragDrop() {
     this.style.border = "none";
     this.appendChild(draggableTodo);
-    console.log("dropped");
 }

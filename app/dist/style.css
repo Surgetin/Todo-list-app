@@ -243,6 +243,7 @@ svg {
   border-radius: 15px;
   background-color: #eff7f7;
   padding: 1rem;
+  min-height: 470px;
 }
 .main-container .content-section .todo-container .todo_header-container {
   display: flex;
