@@ -299,6 +299,7 @@ svg {
 .main-container .content-section .todo-container .todo-edit img:hover,
 .main-container .content-section .todo-container .todo-delete img:hover {
   opacity: 1;
+  cursor: pointer;
 }
 .main-container .content-section .todo-container .todo_box-content {
   max-height: 340px;
@@ -306,7 +307,6 @@ svg {
   flex-direction: column;
   gap: 2rem;
   background-color: transparent;
-  cursor: pointer;
   overflow: auto;
   padding: 0.2rem;
   padding-right: 0.3rem;
@@ -316,6 +316,7 @@ svg {
   background-color: white;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px;
+  cursor: move;
 }
 .main-container .content-section .todo-container .todo_box-content::-webkit-scrollbar {
   width: 6px;
@@ -332,4 +333,8 @@ svg {
 }
 .main-container .content-section .todo-container .todo_box-content::-webkit-scrollbar-thumb:hover {
   background: #2C9985;
+}
+.main-container .content-section .todo_box-content.over {
+  border: 3px dotted rgb(117, 117, 117);
+  border-radius: 15px;
 }/*# sourceMappingURL=style.css.map */
