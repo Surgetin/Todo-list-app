@@ -15,7 +15,7 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: rgb(154, 177, 190);
+  background-color: #d7e0df;
   height: 100%;
   text-rendering: optimizeSpeed;
 }
@@ -66,9 +66,9 @@ svg {
   margin: 0 auto;
   width: 100%;
   max-width: 1440px;
-  height: 760px;
+  height: 800px;
   background-color: rgb(249, 249, 249);
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 .side_menu-container {
@@ -155,9 +155,9 @@ svg {
 .main-container {
   flex-basis: 75%;
   background-color: rgb(249, 249, 249);
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  padding: 4rem 4rem 4rem 3rem;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: 4rem 5rem 4rem 3rem;
 }
 .main-container .content-container {
   display: flex;
@@ -166,4 +166,59 @@ svg {
 .main-container .header {
   display: flex;
   justify-content: space-between;
+}
+.main-container .search-container,
+.main-container .profile-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.main-container .search-container {
+  gap: 1rem;
+}
+.main-container .profile-notice {
+  position: relative;
+}
+.main-container .profile-notice:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 30px;
+  background-color: rgb(252, 153, 41);
+}
+.main-container .profile-name {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  cursor: pointer;
+}
+.main-container .profile-name img {
+  width: 12px;
+  height: 12px;
+}
+.main-container .profile-avatar img {
+  width: 45px;
+  margin-left: 1.6rem;
+}
+.main-container .header-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+.main-container .header-section .heading {
+  font-size: 2rem;
+  font-weight: 400;
+}
+.main-container .header-section .heading-week {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  cursor: pointer;
+}
+.main-container .header-section .heading-week img {
+  width: 12px;
+  height: 12px;
 }/*# sourceMappingURL=style.css.map */

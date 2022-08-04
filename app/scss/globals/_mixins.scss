@@ -1,0 +1,17 @@
+@mixin header_profile-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+@mixin header_profile-arrow{
+    display: flex;
+    gap: .8rem;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+        width: 12px;
+        height: 12px;
+    };
+}

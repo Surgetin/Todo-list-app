@@ -1,5 +1,6 @@
 @use '../globals/colors' as *;
 @use '../globals/variables' as *;
+@use '../globals/mixins' as *;
 
 .container {
     position: absolute;
@@ -10,7 +11,7 @@
     margin: 0 auto;
     width: 100%;
     max-width: 1440px;
-    height: 760px;
+    height: 800px;
     background-color: $container-bg-color;
     border-radius: $container-border-radius;
 }
@@ -117,7 +118,7 @@
     background-color: $container-bg-color;
     border-top-right-radius: $container-border-radius;
     border-bottom-right-radius: $container-border-radius;
-    padding: 4rem 4rem 4rem 3rem;
+    padding: 4rem 5rem 4rem 3rem;
 
     .content-container {
         display: flex;
@@ -127,5 +128,56 @@
     .header {
         display: flex;
         justify-content: space-between
+    }
+
+    .search-container,
+    .profile-container {
+        @include header_profile-container;
+    }
+
+    .search-container {
+        gap: 1rem;
+    }
+
+    .profile {
+
+        &-notice {
+            position: relative;
+        }
+
+        &-notice:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 30px;
+            background-color: rgb(252, 153, 41);
+        }
+
+        &-name {
+            @include header_profile-arrow;
+        }
+               
+        &-avatar img {
+            width: 45px;
+            margin-left: 1.6rem;
+        }
+    }
+
+    .header-section {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5rem;
+
+        .heading {
+            font-size: 2rem;
+            font-weight: 400;
+        }
+
+        .heading-week {
+            @include header_profile-arrow;
+        } 
     }
 }
