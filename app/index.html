@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo list app</title>
 
+    <script src="https://kit.fontawesome.com/64173b1f39.js" crossorigin="anonymous" defer></script>
+
     <link rel="stylesheet" href="dist/style.css">
 
     <script src="js/script.js" defer></script>
@@ -26,7 +28,7 @@
                         <img src="images/icons/stats.png" alt="">
                         <a href="#" class="nav_link">Stats</a>
                     </li>
-                    <li class="nav_list-item">
+                    <li class="nav_list-item active">
                         <img src="images/icons/folder.png" alt="">
                         <a href="#" class="nav_link">Projects</a>
                     </li>
@@ -80,6 +82,87 @@
                         This Week
                         <img src="images/icons/arrow.png" alt="">
                     </div>
+                </section>
+                <section class="content-section">
+                    <div class="todo-container">
+                        <div class="todo_box-heading">
+                            <div class="todo_header-container">
+                                <h2 class="todo-heading">
+                                    Add To do
+                                </h2>
+                                <div class="occurrence">
+                                    <span>2</span>
+                                </div>
+                            </div>
+                            <button class="add_btn">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="todo_box-content">
+                            <div class="todo-wrapper" draggable="true">
+                                <div class="todo-header">
+                                    <h3>Something</h3>
+                                    <div class="todo_modifie-container">
+                                        <div class="todo-edit">
+                                            <img src="images/icons/edit.png" alt="">
+                                        </div>
+                                        <div class="todo-delete">
+                                            <img src="images/icons/delete.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="todo-content">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis enim vel eaque odio. Iste veniam ut assumenda accusantium similique? Temporibus.
+                                </div>
+                            </div>
+                            <div class="todo-wrapper" draggable="true">
+                                <div class="todo-header">
+                                    <h3>Something</h3>
+                                    <div class="todo_modifie-container">
+                                        <div class="todo-edit">
+                                            <img src="images/icons/edit.png" alt="">
+                                        </div>
+                                        <div class="todo-delete">
+                                            <img src="images/icons/delete.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="todo-content">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis enim vel eaque odio. Iste veniam ut assumenda accusantium similique? Temporibus.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="todo-container">
+                        <div class="todo_box-heading">
+                            <div class="todo_header-container">
+                                <h2 class="todo-heading">
+                                    In progress
+                                </h2>
+                                <div class="occurrence">
+                                    <span>1</span>
+                                </div>
+                            </div>
+                            <button class="add_btn">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div> 
+                    <div class="todo-container">
+                        <div class="todo_box-heading">
+                            <div class="todo_header-container">
+                                <h2 class="todo-heading">
+                                    Completed
+                                </h2>
+                                <div class="occurrence">
+                                    <span>0</span>
+                                </div>
+                            </div>
+                            <button class="add_btn">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>                        
                 </section>
             </div>
         </main>
