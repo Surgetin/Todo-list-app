@@ -99,9 +99,9 @@
                             </button>
                         </div>
                         <div class="todo_box-content">
-                            <div class="todo-wrapper" draggable="true">
-                                <div class="todo-header">
-                                    <h3>Mobile App</h3>
+                            <div class="todo_wrapper" draggable="true">
+                                <div class="todo_header">
+                                    <h3 class="todo_header-name">Mobile App</h3>
                                     <div class="todo_modifie-container">
                                         <div class="todo-edit">
                                             <img src="images/icons/edit.png" alt="">
@@ -151,14 +151,25 @@
                     </div> 
                     
                     <!-- Iput field to add todos -->
-                    <div class="todo_input-container"> <!-- Felbuborékozik az esemény a DOM struktúrán felfelé minden parent elementen megíhvódik amíg nincs megállítva -->
-                        <div class="todo_input-field" onclick="event.stopPropagation()"> 
-                            <form>
-                                <input class="todo_input-heading" type="text">
-                                <textarea id="todo_text" name="message" class="form-control" rows="1" maxlength="30000"></textarea>
+                    <div class="todo_input-container"> 
+                        <div class="todo_input-field" onclick="event.stopPropagation()"> <!-- Felbuborékozik az esemény a DOM struktúrán felfelé minden parent elementen megíhvódik amíg nincs megállítva -->
+                            <form class="input_form">
+                                <div class="input_group">
+                                    <label class="title_label">
+                                        Add title:
+                                        <span class="invalid">
+                                            <i class="fa-solid fa-circle-exclamation"></i>
+                                            Please add title
+                                        </span>
+                                    </label>
+                                    <input class="todo_input-heading" type="text">
+                                </div>
+                                <div class="input_group text">
+                                    <label>Add task:</label>
+                                    <textarea id="todo_text" name="message" class="form-control" rows="1" maxlength="30000"></textarea>
+                                </div>
                                 <div class="todo_input-submit">
                                     <button type="submit" id="submit_btn" class="add_btn">
-                                        Add 
                                         <i class="fa-solid fa-plus"></i>
                                     </button>
                                 </div>

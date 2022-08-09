@@ -257,32 +257,36 @@ svg {
   gap: 3%;
   justify-content: space-between;
   margin-top: 2rem;
-  /* Input field */
 }
-.main-container .content-section .todo-container {
+
+.todo-container {
   width: 100%;
   border-radius: 15px;
   background-color: #eff7f7;
   padding: 1rem;
   min-height: 470px;
 }
-.main-container .content-section .todo-container .todo_header-container {
+
+.todo_header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1rem;
 }
-.main-container .content-section .todo-container .todo-heading {
+
+.todo-heading {
   font-size: 1.1rem;
   font-weight: 400;
 }
-.main-container .content-section .todo-container .occurrence span {
+
+.occurrence span {
   background-color: #dbeceb;
   padding: 0.1rem 0.5rem;
   border-radius: 10px;
   color: #2C9985;
 }
-.main-container .content-section .todo-container .add_btn {
+
+.add_btn {
   width: 100%;
   border: 0;
   margin-bottom: 1rem;
@@ -292,15 +296,18 @@ svg {
   cursor: pointer;
   transition: 0.5s ease;
 }
-.main-container .content-section .todo-container .add_btn:hover .fa-plus {
+
+.add_btn:hover .fa-plus {
   transform: rotate(90deg);
 }
-.main-container .content-section .todo-container .fa-plus {
+
+.fa-plus {
   color: #2C9985;
   font-size: 1.2rem;
   transition: 0.5s ease;
 }
-.main-container .content-section .todo-container .todo-header {
+
+.todo_header {
   display: flex;
   justify-content: space-between;
   font-size: 0.9rem;
@@ -309,21 +316,24 @@ svg {
   padding-bottom: 0.3rem;
   border-bottom: 1px solid rgb(231, 231, 231);
 }
-.main-container .content-section .todo-container .todo_modifie-container {
+
+.todo_modifie-container {
   display: flex;
   gap: 0.3rem;
 }
-.main-container .content-section .todo-container .todo_modifie-container img {
+.todo_modifie-container img {
   opacity: 0.5;
   width: 20px;
   transition: 0.3s ease;
 }
-.main-container .content-section .todo-container .todo-edit img:hover,
-.main-container .content-section .todo-container .todo-delete img:hover {
+
+.todo-edit img:hover,
+.todo-delete img:hover {
   opacity: 1;
   cursor: pointer;
 }
-.main-container .content-section .todo-container .todo_box-content {
+
+.todo_box-content {
   max-height: 340px;
   display: flex;
   flex-direction: column;
@@ -333,18 +343,21 @@ svg {
   padding: 0.2rem;
   padding-right: 0.3rem;
 }
-.main-container .content-section .todo-container .todo_box-content .todo-wrapper {
+.todo_box-content .todo_wrapper {
   padding: 1rem;
   background-color: white;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px;
   cursor: move;
 }
-.main-container .content-section .todo_box-content.over {
+
+.todo_box-content.over {
   border: 3px dotted rgb(117, 117, 117);
   border-radius: 15px;
 }
-.main-container .content-section .todo_input-container {
+
+/* Input field */
+.todo_input-container {
   display: none;
   transform: scale(0);
   position: absolute;
@@ -358,13 +371,15 @@ svg {
           backdrop-filter: blur(4px);
   transition: 0.4s ease;
 }
-.main-container .content-section .todo_input-container.active {
+
+.todo_input-container.active {
   display: block;
   transform: scale(1);
 }
-.main-container .content-section .todo_input-field {
+
+.todo_input-field {
   position: absolute;
-  padding: 1rem;
+  padding: 1.5rem;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -372,24 +387,29 @@ svg {
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.main-container .content-section .todo_input-field form {
+
+.todo_input-field form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
-.main-container .content-section .todo_input-field form input,
-.main-container .content-section .todo_input-field form textarea {
-  padding: 0.6rem 1rem;
+.todo_input-field form .input_group.text {
+  margin-top: 1.2rem;
+  margin-bottom: 1rem;
+}
+.todo_input-field form input,
+.todo_input-field form textarea {
+  padding: 0.6rem;
   border-radius: 5px;
   font-size: 1.3rem;
+  width: 100%;
 }
-.main-container .content-section .todo_input-field form textarea {
+.todo_input-field form textarea {
   min-width: 400px;
   min-height: 250px;
   max-width: 400px;
   max-height: 250px;
 }
-.main-container .content-section .todo_input-field form .add_btn {
+.todo_input-field form .add_btn {
   width: 100%;
   border: 0;
   margin-bottom: 1rem;
@@ -402,14 +422,48 @@ svg {
   color: #2C9985;
   font-size: 1.3rem;
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
-.main-container .content-section .todo_input-field form .add_btn:hover .fa-plus {
+.todo_input-field form .add_btn:hover .fa-plus {
   transform: rotate(90deg);
 }
-.main-container .content-section .todo_input-field form .fa-plus {
+.todo_input-field form .fa-plus {
   color: #2C9985;
   font-size: 1.4rem;
   transition: 0.5s ease;
+}
+
+.input_group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.input_group input,
+.input_group textarea {
+  border: none;
+  outline: none;
+  outline: 3px solid #dbeceb;
+}
+
+.input_group label {
+  color: #2C9985;
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.title_label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.invalid {
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: bold;
+  color: #f15353;
+  font-size: 1.1rem;
 }/*# sourceMappingURL=style.css.map */

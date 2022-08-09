@@ -1,4 +1,4 @@
-const todos = document.querySelectorAll('.todo-wrapper');
+const todos = document.querySelectorAll('.todo_wrapper');
 const all_boxes = document.querySelectorAll(".todo_box-content");
 let draggableTodo = null;
 
@@ -69,6 +69,8 @@ function updateListCount(container) {
 /* Add todos */
 const add_btns = document.querySelectorAll('.todo-container .add_btn');
 const todo_container = document.querySelector('.todo_input-container');
+const input_form = document.querySelector('.input_form');
+const invalid = document.querySelector('.invalid')
 
 add_btns.forEach(e => {
     e.addEventListener('click', () => {
@@ -77,6 +79,19 @@ add_btns.forEach(e => {
 })
 
 todo_container.addEventListener('click', () => {
-    todo_container.classList.remove('active'); 
+    todo_container.classList.remove('active');
+    invalid.style.display = 'none'; 
 })
+
+input_form.addEventListener('submit', e => {
+    e.preventDefault()
+    const listTitle = document.querySelector('.todo_input-heading').value
+    if (listTitle == null || listTitle === '' || listTitle.trim().length === 0) {
+        return invalid.style.display = 'flex';
+    } else {
+        invalid.style.display = 'none';
+        todo_container.classList.remove('active'); 
+    }
+})
+
 
