@@ -91,7 +91,7 @@
                                     Add To do
                                 </h2>
                                 <div class="occurrence">
-                                    <span>2</span>
+                                    <span class="item_count">1</span>
                                 </div>
                             </div>
                             <button class="add_btn">
@@ -115,38 +115,6 @@
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis enim vel eaque odio. Iste veniam ut assumenda accusantium similique? Temporibus.
                                 </div>
                             </div>
-                            <div class="todo-wrapper" draggable="true">
-                                <div class="todo-header">
-                                    <h3>Responsive Design</h3>
-                                    <div class="todo_modifie-container">
-                                        <div class="todo-edit">
-                                            <img src="images/icons/edit.png" alt="">
-                                        </div>
-                                        <div class="todo-delete">
-                                            <img src="images/icons/delete.png" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="todo-content">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis enim vel eaque odio. Iste veniam ut assumenda accusantium similique? Temporibus.
-                                </div>
-                            </div>
-                            <div class="todo-wrapper" draggable="true">
-                                <div class="todo-header">
-                                    <h3>Check for updates</h3>
-                                    <div class="todo_modifie-container">
-                                        <div class="todo-edit">
-                                            <img src="images/icons/edit.png" alt="">
-                                        </div>
-                                        <div class="todo-delete">
-                                            <img src="images/icons/delete.png" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="todo-content">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis enim vel eaque odio.
-                                </div>
-                            </div>
                          </div>
                     </div>
                     <div class="todo-container">
@@ -156,7 +124,7 @@
                                     In progress
                                 </h2>
                                 <div class="occurrence">
-                                    <span>1</span>
+                                    <span class="item_count">0</span>
                                 </div>
                             </div>
                             <button class="add_btn">
@@ -172,7 +140,7 @@
                                     Completed
                                 </h2>
                                 <div class="occurrence">
-                                    <span>0</span>
+                                    <span class="item_count">0</span>
                                 </div>
                             </div>
                             <button class="add_btn">
@@ -180,7 +148,23 @@
                             </button>
                             <div class="todo_box-content"></div>
                         </div>
-                    </div>                        
+                    </div> 
+                    
+                    <!-- Iput field to add todos -->
+                    <div class="todo_input-container"> <!-- Felbuborékozik az esemény a DOM struktúrán felfelé minden parent elementen megíhvódik amíg nincs megállítva -->
+                        <div class="todo_input-field" onclick="event.stopPropagation()"> 
+                            <form>
+                                <input class="todo_input-heading" type="text">
+                                <textarea id="todo_text" name="message" class="form-control" rows="1" maxlength="30000"></textarea>
+                                <div class="todo_input-submit">
+                                    <button type="submit" id="submit_btn" class="add_btn">
+                                        Add 
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </section>
             </div>
         </main>

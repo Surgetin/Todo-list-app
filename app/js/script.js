@@ -20,6 +20,8 @@ function dragStart() {
       this.style.display = "none";
     }, 0);
 }
+
+// 
   
 function dragEnd() {
     draggableTodo = null;
@@ -50,5 +52,31 @@ function dragLeave() {
 
 function dragDrop() {
     this.style.border = "none";
+
+    const prevContainer = draggableTodo.parentElement
     this.appendChild(draggableTodo);
+    updateListCount(prevContainer);
+    updateListCount(this);
 }
+
+// this - eseménykezelő függvényeknél az az objectum, amin megtörténik az esemény
+
+function updateListCount(container) {
+    const span = container.parentElement.querySelector('.item_count')
+    span.textContent = container.childElementCount
+}
+
+/* Add todos */
+const add_btns = document.querySelectorAll('.todo-container .add_btn');
+const todo_container = document.querySelector('.todo_input-container');
+
+add_btns.forEach(e => {
+    e.addEventListener('click', () => {
+        todo_container.classList.add('active');        
+    })
+})
+
+todo_container.addEventListener('click', () => {
+    todo_container.classList.remove('active'); 
+})
+
