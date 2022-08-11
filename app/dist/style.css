@@ -93,9 +93,15 @@ svg {
 
 .side_menu-container {
   flex-basis: 25%;
+  min-width: 200px;
   padding: 4rem 0 4rem 4rem;
   border-right: 3px solid rgb(233, 233, 233);
   overflow: hidden;
+}
+@media screen and (max-width: 1000px) {
+  .side_menu-container {
+    padding: 4rem 0 4rem 1rem;
+  }
 }
 .side_menu-container .logo-container {
   margin-bottom: 4rem;
@@ -234,6 +240,7 @@ svg {
   display: flex;
   justify-content: space-between;
   margin-top: 5rem;
+  margin-bottom: 2rem;
 }
 .main-container .header-section .heading {
   font-size: 2rem;
@@ -250,21 +257,38 @@ svg {
   width: 12px;
   height: 12px;
 }
-.main-container .content-section {
+
+.content-section {
+  overflow: auto;
+}
+
+.content-section-container {
   display: flex;
+  flex-direction: row;
   max-height: 480px;
   flex-basis: 33.3%;
-  gap: 3%;
+  gap: 10px;
   justify-content: space-between;
-  margin-top: 2rem;
+}
+@media screen and (max-width: 1000px) {
+  .content-section-container {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 
 .todo-container {
   width: 100%;
+  max-width: 320px;
   border-radius: 15px;
   background-color: #eff7f7;
   padding: 1rem;
   min-height: 470px;
+}
+@media screen and (max-width: 1000px) {
+  .todo-container {
+    max-width: 100%;
+  }
 }
 
 .todo_header-container {
@@ -337,7 +361,7 @@ svg {
   max-height: 340px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   background-color: transparent;
   overflow: auto;
   padding: 0.2rem;

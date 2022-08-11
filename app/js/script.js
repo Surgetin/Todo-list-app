@@ -1,6 +1,8 @@
 const todos = document.querySelectorAll('.todo_wrapper');
 const all_boxes = document.querySelectorAll(".todo_box-content");
 let draggableTodo = null;
+let actualBtn = null;
+let actualDeleteBtn = null;
 
 todos.forEach((todo) => {
     todo.addEventListener("dragstart", dragStart);
@@ -62,7 +64,7 @@ function dragDrop() {
 // this - eseménykezelő függvényeknél az az objectum, amin megtörténik az esemény
 
 function updateListCount(container) {
-    const span = container.parentElement.querySelector('.item_count')
+    span = container.parentElement.querySelector('.item_count')
     span.textContent = container.childElementCount
 }
 
@@ -74,7 +76,8 @@ const invalid = document.querySelector('.invalid')
 
 add_btns.forEach(e => {
     e.addEventListener('click', () => {
-        todo_container.classList.add('active');        
+        todo_container.classList.add('active');
+        actualBtn = e;       
     })
 })
 
@@ -86,12 +89,74 @@ todo_container.addEventListener('click', () => {
 input_form.addEventListener('submit', e => {
     e.preventDefault()
     const listTitle = document.querySelector('.todo_input-heading').value
+    const listTask = document.querySelector('#todo_text').value
     if (listTitle == null || listTitle === '' || listTitle.trim().length === 0) {
         return invalid.style.display = 'flex';
     } else {
         invalid.style.display = 'none';
-        todo_container.classList.remove('active'); 
+        todo_container.classList.remove('active');
     }
+
+    input_form.reset()
+    
+    const listContainer = actualBtn.parentElement.parentElement.querySelector('.todo_box-content')
+    listContainer.appendChild(createTodoNode(listTitle, listTask))
+
+    updateListCount(listContainer)
+
 })
 
+function createTodoNode(title, desc) {
+    let newTodo = 
+            `<div class="todo_wrapper" draggable="true">
+                <div class="todo_header">
+                    <h3 class="todo_header-name">${title}</h3>
+                    <div class="todo_modifie-container">             
+                        <div class="todo-delete">
+                            <img src="images/icons/delete.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="todo-content">${desc}</div>
+            </div>`   
+            
+         
+    createdTodo = htmlToElement(newTodo);
+    const deleteBtn = createdTodo.querySelector('.todo-delete')
+    deleteBtn.addEventListener('click', () => {
+        actualDeleteBtn = deleteBtn
+        deleteTodoItem()
+    })
 
+    createdTodo.addEventListener("dragstart", dragStart);
+    createdTodo.addEventListener("dragend", dragEnd);
+    return createdTodo
+}
+
+
+function deleteBtn(){
+    const deleteBtn = document.querySelectorAll('.todo-delete')
+
+    deleteBtn.forEach(e => {
+        e.addEventListener('click', () => {
+            actualDeleteBtn = e
+            deleteTodoItem()
+        })
+    })
+}
+deleteBtn()
+
+function deleteTodoItem() {
+    const listContainer = actualDeleteBtn.parentElement.parentElement.parentElement
+    if (listContainer.parentNode) {
+        listContainer.parentNode.removeChild(listContainer);
+        updateListCount(listContainer)
+    }
+}
+
+function htmlToElement(html) {
+    let template = document.createElement('template');
+    html = html.trim(); 
+    template.innerHTML = html;
+    return template.content.firstChild;
+}

@@ -84,96 +84,95 @@
                     </div>
                 </section>
                 <section class="content-section">
-                    <div class="todo-container">
-                        <div class="todo_box-heading">
-                            <div class="todo_header-container">
-                                <h2 class="todo-heading">
-                                    Add To do
-                                </h2>
-                                <div class="occurrence">
-                                    <span class="item_count">1</span>
-                                </div>
-                            </div>
-                            <button class="add_btn">
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
-                        </div>
-                        <div class="todo_box-content">
-                            <div class="todo_wrapper" draggable="true">
-                                <div class="todo_header">
-                                    <h3 class="todo_header-name">Mobile App</h3>
-                                    <div class="todo_modifie-container">
-                                        <div class="todo-edit">
-                                            <img src="images/icons/edit.png" alt="">
-                                        </div>
-                                        <div class="todo-delete">
-                                            <img src="images/icons/delete.png" alt="">
-                                        </div>
+                    <div class="content-section-container">
+                        <div class="todo-container">
+                            <div class="todo_box-heading">
+                                <div class="todo_header-container">
+                                    <h2 class="todo-heading">
+                                        Add To do
+                                    </h2>
+                                    <div class="occurrence">
+                                        <span class="item_count">1</span>
                                     </div>
                                 </div>
-                                <div class="todo-content">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis enim vel eaque odio. Iste veniam ut assumenda accusantium similique? Temporibus.
-                                </div>
+                                <button class="add_btn">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
                             </div>
-                         </div>
-                    </div>
-                    <div class="todo-container">
-                        <div class="todo_box-heading">
-                            <div class="todo_header-container">
-                                <h2 class="todo-heading">
-                                    In progress
-                                </h2>
-                                <div class="occurrence">
-                                    <span class="item_count">0</span>
+                            <div class="todo_box-content">
+                                <div class="todo_wrapper" draggable="true">
+                                    <div class="todo_header">
+                                        <h3 class="todo_header-name">Mobile App</h3>
+                                        <div class="todo_modifie-container">
+                                            <div class="todo-delete">
+                                                <img src="images/icons/delete.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="todo-task">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis enim vel eaque odio. Iste veniam ut assumenda accusantium similique? Temporibus.
+                                    </div>
                                 </div>
-                            </div>
-                            <button class="add_btn">
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
-                            <div class="todo_box-content"></div>
+                             </div>
                         </div>
-                    </div> 
-                    <div class="todo-container">
-                        <div class="todo_box-heading">
-                            <div class="todo_header-container">
-                                <h2 class="todo-heading">
-                                    Completed
-                                </h2>
-                                <div class="occurrence">
-                                    <span class="item_count">0</span>
+                        <div class="todo-container">
+                            <div class="todo_box-heading">
+                                <div class="todo_header-container">
+                                    <h2 class="todo-heading">
+                                        In progress
+                                    </h2>
+                                    <div class="occurrence">
+                                        <span class="item_count">0</span>
+                                    </div>
                                 </div>
+                                <button class="add_btn">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                                <div class="todo_box-content"></div>
                             </div>
-                            <button class="add_btn">
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
-                            <div class="todo_box-content"></div>
-                        </div>
-                    </div> 
-                    
-                    <!-- Iput field to add todos -->
-                    <div class="todo_input-container"> 
-                        <div class="todo_input-field" onclick="event.stopPropagation()"> <!-- Felbuborékozik az esemény a DOM struktúrán felfelé minden parent elementen megíhvódik amíg nincs megállítva -->
-                            <form class="input_form">
-                                <div class="input_group">
-                                    <label class="title_label">
-                                        Add title:
-                                        <span class="invalid">
-                                            <i class="fa-solid fa-circle-exclamation"></i>
-                                            Please add title
-                                        </span>
-                                    </label>
-                                    <input class="todo_input-heading" type="text">
+                        </div> 
+                        <div class="todo-container">
+                            <div class="todo_box-heading">
+                                <div class="todo_header-container">
+                                    <h2 class="todo-heading">
+                                        Completed
+                                    </h2>
+                                    <div class="occurrence">
+                                        <span class="item_count">0</span>
+                                    </div>
                                 </div>
-                                <div class="input_group text">
-                                    <label>Add task:</label>
-                                    <textarea id="todo_text" name="message" class="form-control" rows="1" maxlength="30000"></textarea>
-                                </div>
-                                <div class="todo_input-submit">
-                                    <button type="submit" id="submit_btn" class="add_btn">
-                                        <i class="fa-solid fa-plus"></i>
-                                    </button>
-                                </div>
-                            </form>
+                                <button class="add_btn">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                                <div class="todo_box-content"></div>
+                            </div>
+                        </div> 
+                        
+                        <!-- Iput field to add todos -->
+                        <div class="todo_input-container"> 
+                            <div class="todo_input-field" onclick="event.stopPropagation()"> <!-- Felbuborékozik az esemény a DOM struktúrán felfelé minden parent elementen megíhvódik amíg nincs megállítva -->
+                                <form class="input_form">
+                                    <div class="input_group">
+                                        <label class="title_label">
+                                            Add title:
+                                            <span class="invalid">
+                                                <i class="fa-solid fa-circle-exclamation"></i>
+                                                Please add title
+                                            </span>
+                                        </label>
+                                        <input class="todo_input-heading" type="text">
+                                    </div>
+                                    <div class="input_group text">
+                                        <label>Add task:</label>
+                                        <textarea id="todo_text" name="todo_text" class="form-control" rows="1" maxlength="30000"></textarea>
+                                    </div>
+                                    <div class="todo_input-submit">
+                                        <button type="submit" id="submit_btn" class="add_btn">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </section>
