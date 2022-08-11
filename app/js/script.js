@@ -148,9 +148,11 @@ deleteBtn()
 
 function deleteTodoItem() {
     const listContainer = actualDeleteBtn.parentElement.parentElement.parentElement
+    const listContainerBtn = actualDeleteBtn.parentElement.parentElement.parentElement.parentElement
+    
     if (listContainer.parentNode) {
         listContainer.parentNode.removeChild(listContainer);
-        updateListCount(listContainer)
+        updateListCount(listContainerBtn)
     }
 }
 
